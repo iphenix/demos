@@ -6,7 +6,7 @@
 	<display-name>springMVC</display-name>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/application-context.xml;/WEB-INF/etc/**/*-context.xml</param-value>
+		<param-value>/WEB-INF/application-context.xml;/WEB-INF/conf/**/*-context.xml</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
