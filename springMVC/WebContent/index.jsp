@@ -17,7 +17,7 @@
   ~ under the License.
   --%>
 <%@ page session="false" %>
-<%@ include file="/WEB-INF/resources/include.jsp" %>
+<%@ include file="include.jsp" %>
 <html>
 <head>
     <meta http-equiv="Refresh" content="0; url=<c:url value="/s/login"/>">
