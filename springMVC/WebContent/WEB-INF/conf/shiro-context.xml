@@ -73,11 +73,11 @@
                 /logo.png = anon
                 /shiro.css = anon
                 /login.jsp = anon
-                /login = anon
+                /login = anon, ssl[8443]
                 # allow WebStart to pull the jars for the swing app:
                 /*.jar = anon
                 # everything else requires authentication:
-                /** = authc, port[8080]
+                /** = authc
             </value>
         </property>
     </bean>

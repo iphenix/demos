@@ -21,7 +21,7 @@ public class PQMAuthorizingRealm extends AuthorizingRealm {
 			AuthenticationToken arg0) throws AuthenticationException {
 		// TODO Auto-generated method stub
 		
-		return new SimpleAccount();
+		return new SimpleAccount(arg0.getPrincipal(), arg0.getCredentials(), "admin");
 	}
 
 }

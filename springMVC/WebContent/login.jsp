@@ -22,7 +22,6 @@
 <html>
 
 <head>
-    <link type="text/css" rel="stylesheet" href="<c:url value="/shiro.css"/>"/>
 </head>
 
 <body onload="document.forms[0].elements[0].focus();">
@@ -31,7 +30,7 @@
 
     <h1>Shiro Login</h1>
 
-    <form action="login" method="POST">
+    <form action='login.jsp' method="post">
         Username: <input id="username" name="username" type="text"/><br/><br/>
         Password: <input name="password" type="password"/><br/><br/>
         <input type="submit" value="Login"/>
