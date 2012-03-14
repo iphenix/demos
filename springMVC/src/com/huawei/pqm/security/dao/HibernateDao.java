@@ -18,26 +18,23 @@
  */
 package com.huawei.pqm.security.dao;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate3.SessionFactoryUtils;
 
 /**
- * Convenience superclass for DAOs that contains annotations for injecting the session factory
- * and accessing the session.
+ * Convenience superclass for DAOs that contains annotations for injecting the
+ * session factory and accessing the session.
  */
 public abstract class HibernateDao {
 
-    private SessionFactory sessionFactory;
+	@PersistenceContext
+	private EntityManager em;
 
-    @Autowired
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-
-    public Session getSession() {
-        return SessionFactoryUtils.getSession(this.sessionFactory, true);
-    }    
+	public Session getSession() {
+		Session session = (Session) em.getDelegate();
+		return session;
+	}
 
 }

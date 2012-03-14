@@ -18,12 +18,21 @@
  */
 package com.huawei.pqm.security.model;
 
-import javax.persistence.*;
-
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Index;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 /**
  * Simple class that represents any User domain entity in any application.
@@ -35,6 +44,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name="users")
+@Cache(usage= CacheConcurrencyStrategy.READ_WRITE)
 public class User  {
 
     private Long id;
@@ -98,6 +108,7 @@ public class User  {
 
     @ManyToMany
     @JoinTable(name="users_roles")
+    @Cache(usage=CacheConcurrencyStrategy.READ_WRITE)
     public Set<Role> getRoles() {
         return roles;
     }
