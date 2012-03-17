@@ -21,8 +21,6 @@ package com.huawei.pqm.security.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.hibernate.Session;
-
 /**
  * Convenience superclass for DAOs that contains annotations for injecting the
  * session factory and accessing the session.
@@ -32,9 +30,8 @@ public abstract class HibernateDao {
 	@PersistenceContext
 	private EntityManager em;
 
-	public Session getSession() {
-		Session session = (Session) em.getDelegate();
-		return session;
+	public EntityManager getEntityManager() {
+		return em;
 	}
 
 }

@@ -27,10 +27,10 @@ import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -47,7 +47,7 @@ public class Role {
 
 	private String description;
 
-	private Set<String> permissions;
+	private Set<Permission> permissions;
 
 	protected Role() {
 	}
@@ -86,15 +86,13 @@ public class Role {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	@OneToMany
-	@JoinTable(name = "roles_permissions")
+	@ManyToMany(fetch=FetchType.EAGER)
 	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-	public Set<String> getPermissions() {
+	public Set<Permission> getPermissions() {
 		return permissions;
 	}
 
-	public void setPermissions(Set<String> permissions) {
+	public void setPermissions(Set<Permission> permissions) {
 		this.permissions = permissions;
 	}
 

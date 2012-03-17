@@ -25,38 +25,45 @@ import com.huawei.pqm.security.model.User;
 
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+
 @Repository("userDAO")
 @SuppressWarnings("unchecked")
 public class HibernateUserDAO extends HibernateDao implements UserDAO {
 
-    public User getUser(Long userId) {
-        return (User) getSession().get(User.class, userId);
-    }
+	public User getUser(Long userId) {
 
-    public User findUser(String username) {
-        Assert.hasText(username);
-        String query = "from User u where u.username = :username";
-        return (User) getSession().createQuery(query).setString("username", username).uniqueResult();
-    }
+		return getEntityManager().find(User.class, userId);
+	}
 
-    public void createUser(User user) {
-        getSession().save( user );
-    }
+	public User findUser(String username) {
+		Assert.hasText(username);
+		TypedQuery<User> query = getEntityManager().createNamedQuery(
+				"QueryByName", User.class);
+		query.setParameter("username", username);
+		return query.getSingleResult();
+	}
 
-    public List<User> getAllUsers() {
-        return getSession().createQuery("from User order by username").list();
-    }
+	public void createUser(User user) {
+		getEntityManager().persist(user);
+	}
 
-    public void deleteUser(Long userId) {
-        User user = getUser(userId);
-        if( user != null ) {
-            getSession().delete(user);
-        }
-    }
+	public List<User> getAllUsers() {
+		TypedQuery<User> query = getEntityManager().createNamedQuery(
+				"QueryAll", User.class);
+		return query.getResultList();
 
-    public void updateUser(User user) {
-        getSession().update(user);
-    }
+	}
+
+	public void deleteUser(Long userId) {
+		User user = getUser(userId);
+		if (user != null) {
+			getEntityManager().remove(user);
+		}
+	}
+
+	public void updateUser(User user) {
+		getEntityManager().merge(user);
+	}
 
 }
-
