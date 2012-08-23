@@ -55,16 +55,24 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 167.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
-				"for",
-				"Format: Javascript"
-			],
-			[
 				"in",
 				"Package Control: Install Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"for",
+				"Format: Javascript"
 			],
 			[
 				"p",
@@ -76,10 +84,6 @@
 			],
 			[
 				"pi",
-				"Package Control: Install Package"
-			],
-			[
-				"inst",
 				"Package Control: Install Package"
 			],
 			[
@@ -104,6 +108,10 @@
 	},
 	"file_history":
 	[
+		"/Users/phenix/developer/demos/python/static/index.html",
+		"/Users/phenix/developer/demos/python/static/js/common.js",
+		"/Users/phenix/developer/demos/python/static/js/upload.js",
+		"/Users/phenix/developer/demos/python/src/com/phenix/main.py",
 		"/Users/phenix/developer/demos/canvas/war/js/demo.js",
 		"/Users/phenix/developer/demos/canvas/war/index.html",
 		"/Users/phenix/developer/demos/canvas/war/js/common.js",
@@ -127,6 +135,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"XXX",
 			"x",
 			"id",
 			"attr",
@@ -193,6 +202,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
 	"replace":
 	{
 		"height": 64.0
@@ -208,11 +221,11 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"show_minimap": true,
 	"show_open_files": false,
