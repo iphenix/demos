@@ -11,8 +11,7 @@ import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
-import com.huawei.sqm.encode.ProtocolBufferCodecFilter;
-import com.huawei.sqm.handler.ServerHandler;
+import com.huawei.sqm.codec.ProtocolBufferCodecFilter;
 
 public class Server {
 	/**

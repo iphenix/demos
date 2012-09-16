@@ -11,8 +11,7 @@ import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 
-import com.huawei.sqm.encode.ProtocolBufferCodecFilter;
-import com.huawei.sqm.handler.ClientHandler;
+import com.huawei.sqm.codec.ProtocolBufferCodecFilter;
 
 public class Client {
 	private static final int CONNECT_TIMEOUT = 30000;
